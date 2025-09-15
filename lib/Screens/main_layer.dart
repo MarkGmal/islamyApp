@@ -22,6 +22,7 @@ class _MainLayerState extends State<MainLayer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.orange),
       body: tabs[currentTab],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentTab,

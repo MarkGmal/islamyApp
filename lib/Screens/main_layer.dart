@@ -12,7 +12,7 @@ class MainLayer extends StatefulWidget {
 class _MainLayerState extends State<MainLayer> {
   int currentTab = 0;
   List<Widget> tabs = [
-    Container(color: Colors.red),
+    Container(color: Colors.white),
     Container(color: Colors.green),
     Container(color: Colors.amber),
     Container(color: Colors.pink),

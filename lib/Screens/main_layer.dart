@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:session8_islame/Commen/app_const.dart';
+import 'package:session8_islame/Tabs/quran_tab/quran_tab.dart';
 
 import '../Commen/common_decorations.dart';
 
@@ -12,7 +13,7 @@ class MainLayer extends StatefulWidget {
 class _MainLayerState extends State<MainLayer> {
   int currentTab = 0;
   List<Widget> tabs = [
-    Container(color: Colors.white),
+    QuranTab(),
     Container(color: Colors.green),
     Container(color: Colors.amber),
     Container(color: Colors.pink),
@@ -22,7 +23,6 @@ class _MainLayerState extends State<MainLayer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.orange),
       body: tabs[currentTab],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentTab,
@@ -45,7 +45,7 @@ class _MainLayerState extends State<MainLayer> {
                 color: currentTab == 0 ? Colors.white : null,
               ),
             ),
-            label: "Queue",
+            label: "Quran",
           ),
 
           BottomNavigationBarItem(

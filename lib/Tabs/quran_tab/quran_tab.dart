@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:session8_islame/Commen/app_color.dart';
 import 'package:session8_islame/Commen/app_const.dart';
 
-import '../../Wigets/main_bg.dart';
+import '../../Main Wigets/main_bg.dart';
 import 'View/most_recently.dart';
 import 'View/suras_list.dart';
 import 'Widgets/custom_text_field.dart';

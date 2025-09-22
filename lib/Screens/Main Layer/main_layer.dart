@@ -3,8 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:session8_islame/Commen/app_const.dart';
 import 'package:session8_islame/Tabs/quran_tab/quran_tab.dart';
 
-import '../Commen/common_decorations.dart';
-import '../Tabs/hadeeth Tab/hadeeth_tab.dart';
+import '../../Commen/common_decorations.dart';
+import '../../Tabs/hadeeth Tab/hadeeth_tab.dart';
 
 class MainLayer extends StatefulWidget {
   @override

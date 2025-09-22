@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:session8_islame/Theme/app-theme.dart';
 
-import 'Screens/main_layer.dart';
+import 'Screens/Intro & Splash Screen/splash_screen.dart';
+import 'Theme/app-theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: AppTheme.appTheme,
-
-      home: MainLayer(),
+      home: SplashScreen(),
     );
   }
 }

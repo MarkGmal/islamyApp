@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:session8_islame/Wigets/main_header.dart';
 
 import '../Commen/app_color.dart';
+import 'main_header.dart';
 
 class MainBg extends StatelessWidget {
   final Widget child;

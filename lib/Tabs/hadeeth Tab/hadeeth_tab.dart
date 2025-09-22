@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:session8_islame/Commen/app_color.dart';
 import 'package:session8_islame/Commen/app_const.dart';
 
-import '../../Wigets/main_bg.dart';
+import '../../Main Wigets/main_bg.dart';
 
 class HadeethTab extends StatelessWidget {
   const HadeethTab({super.key});

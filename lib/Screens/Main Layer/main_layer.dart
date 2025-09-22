@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:session8_islame/Commen/app_const.dart';
+import 'package:session8_islame/Tabs/quran_tab/quran_tab.dart';
 
-import '../Commen/common_decorations.dart';
+import '../../Commen/common_decorations.dart';
+import '../../Tabs/hadeeth Tab/hadeeth_tab.dart';
 
 class MainLayer extends StatefulWidget {
   @override
@@ -12,8 +14,8 @@ class MainLayer extends StatefulWidget {
 class _MainLayerState extends State<MainLayer> {
   int currentTab = 0;
   List<Widget> tabs = [
-    Container(color: Colors.red),
-    Container(color: Colors.green),
+    QuranTab(),
+    HadeethTab(),
     Container(color: Colors.amber),
     Container(color: Colors.pink),
     Container(color: Colors.blue),
@@ -44,7 +46,7 @@ class _MainLayerState extends State<MainLayer> {
                 color: currentTab == 0 ? Colors.white : null,
               ),
             ),
-            label: "Queue",
+            label: "Quran",
           ),
 
           BottomNavigationBarItem(

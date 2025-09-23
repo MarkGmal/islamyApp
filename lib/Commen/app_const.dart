@@ -15,4 +15,10 @@ abstract class AppConsts {
   static const String introBg3 = 'assets/images/intro_bg3.png';
   static const String introBg4 = 'assets/images/intro_bg4.png';
   static const String introBg5 = 'assets/images/intro_bg5.png';
+  static const String bg1Card = 'assets/images/bg1_card.png';
+  static const String play = 'assets/svg_icons/play.svg';
+  static const String pause = 'assets/svg_icons/pause.svg';
+  static const String volumeHigh = 'assets/svg_icons/volume_high.svg';
+  static const String volumeLow = 'assets/svg_icons/volume_low.svg';
+  static const String soundWave = 'assets/images/sound_wave.png';
 }

@@ -4,9 +4,13 @@ import 'package:session8_islame/Commen/app_const.dart';
 import 'package:session8_islame/Tabs/quran_tab/quran_tab.dart';
 
 import '../../Commen/common_decorations.dart';
+import '../../Tabs/Radio Tab/radio_tab.dart';
+import '../../Tabs/Sebha Tab/sebha_tab.dart';
 import '../../Tabs/hadeeth Tab/hadeeth_tab.dart';
 
 class MainLayer extends StatefulWidget {
+  static const String routeName = 'mainLayer';
+
   @override
   State<MainLayer> createState() => _MainLayerState();
 }
@@ -16,8 +20,8 @@ class _MainLayerState extends State<MainLayer> {
   List<Widget> tabs = [
     QuranTab(),
     HadeethTab(),
-    Container(color: Colors.amber),
-    Container(color: Colors.pink),
+    SebhaTab(),
+    RadioTab(),
     Container(color: Colors.blue),
   ];
 

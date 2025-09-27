@@ -8,8 +8,24 @@ import 'View/most_recently.dart';
 import 'View/suras_list.dart';
 import 'Widgets/custom_text_field.dart';
 
-class QuranTab extends StatelessWidget {
+class QuranTab extends StatefulWidget {
   const QuranTab({super.key});
+
+  @override
+  State<QuranTab> createState() => _QuranTabState();
+}
+
+class _QuranTabState extends State<QuranTab> {
+  TextEditingController controller = TextEditingController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    controller.addListener(() {
+      setState(() {});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +38,7 @@ class QuranTab extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: CustomTextField(
+                controller: controller,
                 hintText: 'Sura Name',
                 prefixIcon: SvgPicture.asset(
                   AppConsts.quranIcon,
@@ -34,7 +51,12 @@ class QuranTab extends StatelessWidget {
             ),
             Expanded(
               child: SingleChildScrollView(
-                child: Column(children: [MostRecently(), SurasList()]),
+                child: Column(
+                  children: [
+                    MostRecently(),
+                    SurasList(searchText: controller.text),
+                  ],
+                ),
               ),
             ),
           ],

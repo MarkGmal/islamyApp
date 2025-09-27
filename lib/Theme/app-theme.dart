@@ -7,7 +7,7 @@ class AppTheme {
   static ThemeData appTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.blackColor,
     appBarTheme: AppBarTheme(
-      color: AppColors.goldColor,
+      color: AppColors.blackColor,
       centerTitle: true,
       iconTheme: IconThemeData(color: AppColors.goldColor, size: 22),
       titleTextStyle: TextStyle(

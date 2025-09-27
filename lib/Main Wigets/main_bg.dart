@@ -7,7 +7,7 @@ class MainBg extends StatelessWidget {
   final Widget child;
   final String bgImage;
 
-  const MainBg({required this.child, required this.bgImage, super.key});
+  const MainBg({required this.bgImage, required this.child, super.key});
 
   @override
   Widget build(BuildContext context) {

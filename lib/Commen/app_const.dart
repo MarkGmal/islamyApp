@@ -21,4 +21,9 @@ abstract class AppConsts {
   static const String volumeHigh = 'assets/svg_icons/volume_high.svg';
   static const String volumeLow = 'assets/svg_icons/volume_low.svg';
   static const String soundWave = 'assets/images/sound_wave.png';
+  static const String sebhaTabBg = 'assets/images/sebha_bg_tab.png';
+  static const String sebhaBody = 'assets/images/sebhaBody 1.png';
+  static const String sebhaTest = 'assets/images/header_sebha.png';
+  static const String hadethPgae_bg = 'assets/images/hadethPgae_bg.png';
+  static const String suraDetailsBg = 'assets/images/suraDetailsBg.png';
 }

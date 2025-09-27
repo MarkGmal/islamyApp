@@ -55,10 +55,11 @@ class Cards extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 20.0, bottom: 13.0),
                 child: Row(
+                  spacing: 15,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SizedBox(width: 24),
                     SvgPicture.asset(iconPlay),
-                    SizedBox(width: 20),
                     SvgPicture.asset(iconSound),
                   ],
                 ),

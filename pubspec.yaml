@@ -63,6 +63,9 @@ flutter:
   assets:
     - assets/svg_icons/
     - assets/images/
+    - assets/Suras List.txt
+    - assets/Hadeeth/
+    - assets/Suras/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

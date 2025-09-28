@@ -5,19 +5,19 @@ import 'package:session8_islame/Commen/app_const.dart';
 class CustomTextField extends StatelessWidget {
   String? hintText;
   Widget? prefixIcon;
-  final TextEditingController controller;
+  final void Function(String) onChanged;
 
   CustomTextField({
     this.hintText,
     this.prefixIcon,
     super.key,
-    required this.controller,
+    required this.onChanged,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: controller,
+      onChanged: onChanged,
       style: TextStyle(
         color: Colors.white,
         fontSize: 18,

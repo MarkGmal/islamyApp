@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:session8_islame/Commen/app_const.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../Moudels/sura_model.dart';
 import '../sura_details.dart';
 
 class SurasList extends StatelessWidget {
-  const SurasList({super.key, required this.searchText});
+  const SurasList({super.key, required this.searchText, required this.onNAv});
 
   final String searchText;
+  final void Function() onNAv;
   @override
   Widget build(BuildContext context) {
     List<SuraModel> suras = SuraModel.getSurasList
@@ -38,9 +40,13 @@ class SurasList extends StatelessWidget {
             itemBuilder: (context, index) {
               SuraModel curranSura = suras[index];
               return ListTile(
-                onTap: () => Navigator.of(
-                  context,
-                ).pushNamed(SuraDetails.routeName, arguments: curranSura),
+                onTap: () {
+                  cashSuraToList(curranSura.index);
+                  onNAv();
+                  Navigator.of(
+                    context,
+                  ).pushNamed(SuraDetails.routeName, arguments: curranSura);
+                },
                 contentPadding: EdgeInsets.zero,
 
                 leading: Stack(
@@ -95,5 +101,15 @@ class SurasList extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future cashSuraToList(int index) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    List<String> data = pref.getStringList(AppConsts.mostRecentKey) ?? [];
+    Set<String> temp = data.toSet();
+    data = temp.toList();
+    data.remove(index.toString());
+    data.add(index.toString());
+    pref.setStringList(AppConsts.mostRecentKey, data);
   }
 }

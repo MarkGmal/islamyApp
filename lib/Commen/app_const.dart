@@ -26,4 +26,12 @@ abstract class AppConsts {
   static const String sebhaTest = 'assets/images/header_sebha.png';
   static const String hadethPgae_bg = 'assets/images/hadethPgae_bg.png';
   static const String suraDetailsBg = 'assets/images/suraDetailsBg.png';
+  static const String azkar1 = 'assets/images/azkar1.png';
+  static const String azkar2 = 'assets/images/azkar2.png';
+  static const String azkar3 = 'assets/images/azkar3.png';
+  static const String azkar4 = 'assets/images/azkar4.png';
+  static const String azkar5 = 'assets/images/azkar5.png';
+  static const String azkar6 = 'assets/images/azkar6.png';
+  static const String timeBg = 'assets/images/time_bg.png';
+  static const String mostRecentKey = 'mostRecent';
 }

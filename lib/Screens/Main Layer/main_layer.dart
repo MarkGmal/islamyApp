@@ -6,6 +6,7 @@ import 'package:session8_islame/Tabs/quran_tab/quran_tab.dart';
 import '../../Commen/common_decorations.dart';
 import '../../Tabs/Radio Tab/radio_tab.dart';
 import '../../Tabs/Sebha Tab/sebha_tab.dart';
+import '../../Tabs/Time Tab/time_tab.dart';
 import '../../Tabs/hadeeth Tab/hadeeth_tab.dart';
 
 class MainLayer extends StatefulWidget {
@@ -22,7 +23,7 @@ class _MainLayerState extends State<MainLayer> {
     HadeethTab(),
     SebhaTab(),
     RadioTab(),
-    Container(color: Colors.blue),
+    TimeTab(),
   ];
 
   @override

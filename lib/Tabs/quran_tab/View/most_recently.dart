@@ -1,9 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:session8_islame/Commen/app_color.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../Commen/app_const.dart';
+import '../../../Moudels/sura_model.dart';
 
-class MostRecently extends StatelessWidget {
+class MostRecently extends StatefulWidget {
+  @override
+  State<MostRecently> createState() => _MostRecentlyState();
+}
+
+class _MostRecentlyState extends State<MostRecently> {
+  List<SuraModel> mostRecent = [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    loadMostRicent();
+  }
+
+  @override
+  void didUpdateWidget(covariant MostRecently oldWidget) {
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+    loadMostRicent();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,8 +48,10 @@ class MostRecently extends StatelessWidget {
           height: 150,
           child: ListView.builder(
             padding: EdgeInsets.only(left: 20),
-            itemBuilder: (context, index) => SizedBox(
-              width: 280,
+            itemBuilder: (context, index) {
+              SuraModel sura = mostRecent[index];
+              return SizedBox(
+                width: 280,
               child: Card(
                 color: AppColors.goldColor,
                 child: Padding(
@@ -47,8 +72,8 @@ class MostRecently extends StatelessWidget {
                             SizedBox(
                               width: 200,
                               child: Text(
-                                "Al-Anbiya",
-                                style: TextStyle(
+                                  sura.enName,
+                                  style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 24,
                                   color: AppColors.blackColor,
@@ -59,8 +84,8 @@ class MostRecently extends StatelessWidget {
                             SizedBox(
                               width: 200,
                               child: Text(
-                                "الأنبياء",
-                                style: TextStyle(
+                                  sura.arName,
+                                  style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 24,
                                   color: AppColors.blackColor,
@@ -71,8 +96,8 @@ class MostRecently extends StatelessWidget {
                             SizedBox(
                               width: 200,
                               child: Text(
-                                "112 Verses",
-                                style: TextStyle(
+                                  "${sura.versesCount}Verses",
+                                  style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 14,
                                   color: AppColors.blackColor,
@@ -93,12 +118,24 @@ class MostRecently extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            itemCount: 10,
+              );
+            },
+            itemCount: mostRecent.length,
             scrollDirection: Axis.horizontal,
           ),
         ),
       ],
     );
+  }
+
+  loadMostRicent() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    List<String> data = pref.getStringList(AppConsts.mostRecentKey) ?? [];
+    List<SuraModel> suras = data
+        .map((e) => SuraModel.getSurasList[int.parse(e) - 1])
+        .toList();
+    setState(() {
+      mostRecent = suras.reversed.toList();
+    });
   }
 }

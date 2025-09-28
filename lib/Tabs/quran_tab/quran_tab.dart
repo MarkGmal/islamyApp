@@ -16,17 +16,8 @@ class QuranTab extends StatefulWidget {
 }
 
 class _QuranTabState extends State<QuranTab> {
-  TextEditingController controller = TextEditingController();
-
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    controller.addListener(() {
-      setState(() {});
-    });
-  }
-
+  String searchText = '';
   @override
   Widget build(BuildContext context) {
     return MainBg(
@@ -38,7 +29,11 @@ class _QuranTabState extends State<QuranTab> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: CustomTextField(
-                controller: controller,
+                onChanged: (text) {
+                  setState(() {
+                    searchText = text;
+                  });
+                },
                 hintText: 'Sura Name',
                 prefixIcon: SvgPicture.asset(
                   AppConsts.quranIcon,
@@ -54,7 +49,10 @@ class _QuranTabState extends State<QuranTab> {
                 child: Column(
                   children: [
                     MostRecently(),
-                    SurasList(searchText: controller.text),
+                    SurasList(
+                      searchText: searchText,
+                      onNAv: () => setState(() {}),
+                    ),
                   ],
                 ),
               ),
